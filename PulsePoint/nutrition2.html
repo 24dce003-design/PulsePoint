@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Guide</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            background-image: url('https://cdn1.thesculptedvegan.com/wp-content/uploads/2020/03/16095502/gym-background-min.jpg');
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-style: italic;
+        }
+         nav a:hover {
+            color: #00ff88;
+        }
+
+
+        h1 {
+            font-size: 36px;
+            color: #ff0000;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .plan-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgb(255, 0, 0);
+            text-align: left;
+        }
+
+        .plan-card:hover{
+              transform: translateY(-5px);
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        h2 {
+            color:  #15ff00ad;
+        }
+
+        ul {
+            list-style: square;
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <nav>
+            <a href="first2.html">Home</a>
+            <a href="login2.html">Login</a>
+            <a href="bmicalculator2.html">BMI</a>
+            <a href="goal2.html">Goal</a>
+            <a href="workout2.html">Workout</a>
+            <a href="nutrition2.html">Nutrition</a>
+            <a href="recipes2.html">Recipe</a>
+            <a href="liveclass2.html">Live</a>
+            <a href="membership2.html">Membership</a>
+            <a href="event2.html">Event</a>
+            <a href="sample2.html">About us</a>
+        </nav>
+
+        <h1>Nutrition Guide</h1>
+        <p>Choose your goal and find a meal plan that fits you best!</p>
+
+        <div class="plan-card" id="vegan">
+            <h2>Vegan Plan</h2>
+            <ul>
+                <li>Breakfast: Oatmeal with almond milk, banana, chia seeds</li>
+                <li>Lunch: Quinoa salad with beans, cucumber, tomatoes</li>
+                <li>Dinner: Tofu stir-fry with broccoli and rice</li>
+                <li>Snacks: Nuts, fruit, hummus with carrots</li>
+            </ul>
+        </div>
+
+        <div class="plan-card" id="keto">
+            <h2>Keto Plan</h2>
+            <ul>
+                <li>Breakfast: Scrambled eggs with avocado</li>
+                <li>Lunch: Grilled chicken with leafy greens and olive oil</li>
+                <li>Dinner: Salmon with spinach and butter</li>
+                <li>Snacks: Boiled eggs, cheese, almonds</li>
+            </ul>
+        </div>
+
+        <div class="plan-card" id="muscle">
+            <h2>Muscle Gain Plan</h2>
+            <ul>
+                <li>Breakfast: Eggs, oats, peanut butter smoothie</li>
+                <li>Lunch: Chicken breast, sweet potato, mixed veggies</li>
+                <li>Dinner: Lean beef with brown rice and beans</li>
+                <li>Snacks: Greek yogurt, protein bars, milk</li>
+            </ul>
+        </div>
+
+       <footer>
+        <p>📧 <strong>Email:</strong> pulsepoint@gmail.com</p>
+        <p>📞 <strong>Contact:</strong> 1234567890</p>
+    </footer>
+    <script>
+         const cards = document.querySelectorAll('.plan-card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const planName = card.querySelector('h2').innerText;
+                alert(`🍽️ You selected: ${planName}`);
+                console.log("Selected Nutrition Plan:", planName);
+
+                // Add temporary highlight
+                card.classList.add('highlight');
+                setTimeout(() => {
+                    card.classList.remove('highlight');
+                }, 1000);
+            });
+        });
+    </script>
+    </center>
+</body>
+</html>

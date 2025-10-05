@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness App - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://cdn1.thesculptedvegan.com/wp-content/uploads/2020/03/16095502/gym-background-min.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position:sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-style: italic;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        h2 {
+            color: #f0f0f0;
+            margin-top: 50px;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        h1 {
+            font-size: 64px;
+            color: #ff0000;
+            margin: 20px 0 10px;
+            text-shadow: 3px 3px 6px #000;
+            font-style:italic;
+        }
+
+        h3 {
+            font-style: italic;
+            color: #fbfaf8;
+            margin-bottom: 30px;
+            font-size: 20px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        img {
+            margin-top: 20px;
+            border-radius: 20px;
+            width:30%;
+            height: auto;
+            box-shadow: 0 0px 16px rgb(254, 0, 0);
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0px 40px rgb(255, 0, 0);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px 0;
+            font-size: 15px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin: 50px auto;
+            width: 80%;
+            text-align: left;
+        }
+
+        .faq-item {
+            background: rgba(0,0,0,0.6);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* Modal Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #111;
+            color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border: 2px solid #ff0000;
+            width: 60%;
+            border-radius: 20px;
+            box-shadow: 0 0 20px red;
+        }
+
+        .close {
+            color: #fff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2>Welcome to Fitness Community</h2> 
+    <h1>PULSEPOINT</h1>
+    <h3>"Fuel your fire. Find your pulse."</h3>
+
+    <nav>
+        <a href="first2.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="bmicalculator2.html">BMI</a>
+        <a href="goal2.html">Goal</a>
+        <a href="workout2.html">Workout</a>
+        <a href="nutrition2.html">Nutrition</a>
+        <a href="recipes2.html">Recipe</a>
+        <a href="liveclass2.html">Live</a>
+        <a href="membership2.html">Membership</a>
+        <a href="event2.html">Event</a>
+        <a href="sample2.html">About Us</a>
+    </nav>
+    <br>
+
+    <img src="b1.png" alt="PulsePoint Logo">
+
+ 
+    <div class="faq-section">
+        <div class="faq-item">
+            <div class="faq-question">💪 What is PulsePoint?</div>
+            <div class="faq-answer">PulsePoint is a fitness platform offering personalized workouts, nutrition guidance, live classes and more.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">📆 How can I join a live session?</div>
+            <div class="faq-answer">Click on the "Live" tab in the menu, pick a session and register!</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">🎯 Do you offer personal coaching?</div>
+            <div class="faq-answer">Yes! Join our membership and get access to one-on-one coaching with experts.</div>
+        </div>
+    </div>
+
+
+          <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>🔥 Special Offer!</h2>
+            <p>Sign up today and get <strong>1-month FREE membership</strong> + access to exclusive live sessions.</p>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>📧 <strong>Email:</strong> pulsepoint@gmail.com</p>
+        <p>📞 <strong>Contact:</strong> 1234567890</p>
+    </footer>
+
+  <script>
+    
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+            });
+        });
+
+      
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById('promoModal').style.display = 'block';
+            }, 1000);
+        }
+
+        function closeModal() {
+            document.getElementById('promoModal').style.display = 'none';
+        }
+
+     
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+  </script>
+ 
+</body>
+</html>

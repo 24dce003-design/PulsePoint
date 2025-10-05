@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Your Fitness Goals</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://cdn1.thesculptedvegan.com/wp-content/uploads/2020/03/16095502/gym-background-min.jpg') no-repeat center center/cover;
+            color: #ffffff;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+            font-style: italic;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+
+        }
+
+        .goal-card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+             box-shadow: 0 0px 12px rgb(255, 0, 0);
+
+        }
+
+        .goal-card:hover{
+             transform: scale(1.05);
+            box-shadow: 0 0px 40px rgba(255, 0, 0, 0.6);
+        }
+
+        h1 {
+            color: #ff4c4c;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+       input[type="submit"] {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00ff88;
+            transform: scale(1.05);}
+
+ footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            margin-top: 80px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="first2.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="bmicalculator2.html">BMI</a>
+        <a href="goal2.html">Goal</a>
+        <a href="workout2.html">Workout</a>
+        <a href="nutrition2.html">Nutrition</a>
+        <a href="recipes2.html">Recipe</a>
+        <a href="liveclass2.html">Live</a>
+        <a href="membership2.html">Membership</a>
+        <a href="event2.html">Event</a>
+        <a href="sample2.html">About Us</a>
+    </nav>
+
+    <div class="container">
+        <div class="goal-card">
+            <h1>Goal Setting</h1>
+            <p>Write down your personal fitness goals below. Be specific and stay motivated!</p>
+
+            <form>
+                <label>Your Name:</label>
+                <input type="text" name="name" placeholder="Enter your name">
+
+                <label>Goal Title:</label>
+                <input type="text" name="goal-title" placeholder="e.g., Lose 5kg in 2 months">
+
+                <label>Why is this goal important to you?</label>
+                <textarea name="goal-reason" rows="4" placeholder="Write your motivation..."></textarea>
+
+                <label>Deadline:</label>
+                <input type="date" name="goal-deadline">
+
+                <label>Daily Actions:</label>
+                <textarea name="goal-actions" rows="4" placeholder="e.g., Workout 5x/week, Drink 2L water..."></textarea>
+
+               <center> <input type="submit" value="Save Goal"></center>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>📧 <strong>Email:</strong> pulsepoint@gmail.com</p>
+        <p>📞 <strong>Contact:</strong> 1234567890</p>
+    </footer>
+<script>
+    document.getElementById("goalForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const title = document.getElementById("goal-title").value.trim();
+            const reason = document.getElementById("goal-reason").value.trim();
+            const deadline = document.getElementById("goal-deadline").value;
+            const actions = document.getElementById("goal-actions").value.trim();
+
+            if (!name || !title || !reason || !deadline || !actions) {
+                alert("Please fill in all fields before submitting.");
+                return;
+            }
+
+            // You can handle the goal here, like saving to localStorage or a server
+            console.log("Goal Saved:");
+            console.log("Name:", name);
+            console.log("Goal Title:", title);
+            console.log("Reason:", reason);
+            console.log("Deadline:", deadline);
+            console.log("Daily Actions:", actions);
+
+            alert("🎯 Your goal has been saved successfully!");
+
+            // Optionally clear the form
+            document.getElementById("goalForm").reset();
+        });
+
+</script>
+</body>
+</html>

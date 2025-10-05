@@ -1,0 +1,333 @@
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>Healthy Recipes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            background-image: url('https://cdn1.thesculptedvegan.com/wp-content/uploads/2020/03/16095502/gym-background-min.jpg');
+        }
+
+        nav {
+            background-color: #111;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            font-style: italic;
+        }
+
+        nav a:hover {
+            color: #09ff00;
+        }
+
+        h1 {
+            color: #ff0000;
+            margin-top: 30px;
+            font-size: 36px;
+        }
+
+        .recipe-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .recipe-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px #ff0000;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #ff0000aa;
+        }
+
+        .recipe-card h2 {
+            color: #15ff00ad;
+            font-size: 22px;
+            margin-top: 0;
+        }
+
+        .recipe-card ul, .recipe-card ol {
+            padding-left: 20px;
+            font-size: 15px;
+        }
+
+        .recipe-card li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        
+        #scrollBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #ff0000;
+            color: white;
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ff0000aa;
+        }
+
+        #scrollBtn:hover {
+            background-color: #cc0000;
+        }
+
+        @media (max-width: 600px) {
+            .recipe-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .recipe-card {
+                width: 90%;
+            }
+        }
+
+
+        #search-bar {
+        margin-top: 20px;
+        background-color: rgb(0, 0, 0);
+        padding: 15px;
+        text-align: center;
+    }
+
+    #search-bar input {
+        padding: 10px;
+        width: 250px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    #search-bar button {
+        padding: 10px 20px;
+        margin-left: 10px;
+        background-color: #ff0000;
+        border: none;
+        border-radius: 6px;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #search-bar button:hover {
+        background-color: #55cc00;
+    }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="first2.html">Home</a>
+        <a href="login2.html">Login</a>
+        <a href="bmicalculator2.html">BMI</a>
+        <a href="goal2.html">Goal</a>
+        <a href="workout2.html">Workout</a>
+        <a href="nutrition2.html">Nutrition</a>
+        <a href="recipes2.html">Recipe</a>
+        <a href="liveclass2.html">Live</a>
+        <a href="membership2.html">Membership</a>
+        <a href="event2.html">Event</a>
+        <a href="sample2.html">About us</a>
+    </nav>
+    
+    <div id="search-bar">
+        <input type="text" id="searchInput" placeholder="Search recipe..." />
+        <button onclick="filterRecipes()">Search</button>
+    </div>
+
+    <h1>Healthy Recipes</h1>
+
+    <div class="recipe-container">
+
+        <div class="recipe-card">
+            <h2>Protein Shake (Chocolate Banana)</h2>
+            <ul>
+                <li>1 ripe banana</li>
+                <li>1 scoop chocolate protein powder</li>
+                <li>1 cup milk or almond milk</li>
+                <li>1 tbsp peanut butter (optional)</li>
+                <li>4–5 ice cubes</li>
+            </ul>
+            <ol>
+                <li>Add all ingredients into a blender.</li>
+                <li>Blend until smooth.</li>
+                <li>Pour into a glass and enjoy!</li>
+            </ol>
+        </div>
+
+        <div class="recipe-card">
+            <h2>Grilled Chicken Salad</h2>
+            <ul>
+                <li>1 grilled chicken breast</li>
+                <li>1 cup lettuce or spinach</li>
+                <li>1/2 cup cherry tomatoes</li>
+                <li>1/4 cucumber (sliced)</li>
+                <li>1 tbsp olive oil & lemon juice</li>
+            </ul>
+            <ol>
+                <li>Grill the chicken breast and slice it.</li>
+                <li>Combine all vegetables in a bowl.</li>
+                <li>Place chicken on top and add dressing.</li>
+                <li>Mix and serve fresh.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-card">
+            <h2>Oat Energy Bites (No-Bake)</h2>
+            <ul>
+                <li>1 cup oats</li>
+                <li>1/2 cup peanut butter</li>
+                <li>1/4 cup honey</li>
+                <li>1/4 cup dark chocolate chips</li>
+                <li>1/2 tsp vanilla extract</li>
+            </ul>
+            <ol>
+                <li>Mix all ingredients in a bowl.</li>
+                <li>Roll into small balls.</li>
+                <li>Refrigerate for 30 minutes before serving.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-card">
+            <h2>Veggie Omelette</h2>
+            <ul>
+                <li>2 eggs</li>
+                <li>1/4 cup chopped onions</li>
+                <li>1/4 cup chopped bell peppers</li>
+                <li>1/4 cup spinach</li>
+                <li>Salt and pepper to taste</li>
+            </ul>
+            <ol>
+                <li>Whisk the eggs and mix with veggies.</li>
+                <li>Cook in a pan until both sides are golden.</li>
+                <li>Serve with whole-grain toast.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-card">
+            <h2>Quinoa & Chickpea Bowl</h2>
+            <ul>
+                <li>1 cup cooked quinoa</li>
+                <li>1/2 cup boiled chickpeas</li>
+                <li>1/4 cup diced cucumbers</li>
+                <li>1/4 cup diced tomatoes</li>
+                <li>1 tbsp lemon juice</li>
+                <li>Salt, pepper, olive oil</li>
+            </ul>
+            <ol>
+                <li>Mix quinoa, chickpeas, and veggies in a bowl.</li>
+                <li>Add lemon juice, olive oil, salt, and pepper.</li>
+                <li>Toss well and enjoy chilled.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-card">
+            <h2>Peanut Butter Banana Toast</h2>
+            <ul>
+                <li>1 slice whole grain bread</li>
+                <li>1 tbsp peanut butter</li>
+                <li>1 banana (sliced)</li>
+                <li>Optional: cinnamon, chia seeds</li>
+            </ul>
+            <ol>
+                <li>Toast the bread slice.</li>
+                <li>Spread peanut butter evenly.</li>
+                <li>Top with banana slices.</li>
+                <li>Sprinkle with optional toppings.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-card">
+            <h2>Green Detox Smoothie</h2>
+            <ul>
+                <li>1 cup spinach leaves</li>
+                <li>1/2 banana</li>
+                <li>1/2 green apple</li>
+                <li>1/2 cucumber</li>
+                <li>1 cup water or coconut water</li>
+                <li>Ice cubes (optional)</li>
+            </ul>
+            <ol>
+                <li>Chop and wash ingredients.</li>
+                <li>Blend with liquid until smooth.</li>
+                <li>Serve fresh and cold.</li>
+            </ol>
+        </div>
+
+    </div>
+
+    
+<script>
+    
+        const scrollBtn = document.getElementById("scrollBtn");
+        window.onscroll = function () {
+            scrollBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+            
+        function filterRecipes() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.getElementsByClassName("recipe-card");
+
+            for (let i = 0; i < cards.length; i++) {
+                const title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+                cards[i].style.display = title.includes(input) ? "block" : "none";
+            }
+        }
+
+
+</script>
+
+    
+   <footer>
+        <p>📧 <strong>Email:</strong> pulsepoint@gmail.com</p>
+        <p>📞 <strong>Contact:</strong> 1234567890</p>
+    </footer>
+
+</body>
+</html>
